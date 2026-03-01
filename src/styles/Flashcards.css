@@ -1,0 +1,177 @@
+.fc-page {
+  padding: 140px 16px 48px; /* offset fixed navbar */
+  background: #0b1220;
+  min-height: 100vh;
+  font-family: "Sora", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #e2e8f0;
+}
+.fc-hero { max-width: 1100px; margin: 0 auto 18px; }
+.fc-hero h1 { margin: 6px 0 8px; font-size: clamp(28px, 4vw, 36px); color: #f8fafc; }
+.kicker { text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-weight: 700; font-size: 12px; margin: 0; }
+.sub { color: #cbd5e1; margin: 0; }
+
+.fc-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 14px;
+}
+.fc-sidebar {
+  display: grid;
+  gap: 10px;
+}
+.deck-btn {
+  text-align: left;
+  border: 1px solid rgba(226,232,240,0.08);
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+  color: #e2e8f0;
+}
+.deck-btn.active {
+  border-color: #7c8dff;
+  box-shadow: 0 12px 30px rgba(124,141,255,0.3);
+}
+.deck-name { font-weight: 700; color: #0f172a; }
+.deck-name { font-weight: 700; color: #e2e8f0; }
+.deck-count { color: #cbd5e1; font-size: 13px; }
+
+.fc-card-wrap {
+  background: #0f172a;
+  border: 1px solid rgba(226,232,240,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+  display: grid;
+  gap: 12px;
+  place-items: center;
+}
+
+.fc-card {
+  width: 100%;
+  max-width: 460px;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+.fc-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #7c8dff, #a78bfa);
+  color: #0b1220;
+  border-radius: 14px;
+  padding: 18px;
+  backface-visibility: hidden;
+  box-shadow: 0 18px 38px rgba(124,141,255,0.35);
+}
+.fc-face.back {
+  transform: rotateY(180deg);
+  background: #0b162b;
+  color: #e2e8f0;
+}
+.fc-card.flipped .front { transform: rotateY(180deg); }
+.fc-card.flipped .back { transform: rotateY(360deg); }
+.fc-card .front { transform: rotateY(0deg); transition: transform 0.5s; }
+.fc-card .back { transition: transform 0.5s; }
+.fc-face h3 { margin: 0 0 6px; text-align: center; }
+.fc-face p { margin: 0; opacity: 0.9; }
+.hint { color: #cbd5e1; font-size: 13px; }
+
+.fc-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn.primary { background: linear-gradient(135deg, #7c8dff, #a78bfa); color: #0b1220; }
+.btn.ghost { background: #0f172a; color: #e2e8f0; border: 1px solid rgba(226,232,240,0.12); }
+
+@media (max-width: 900px) {
+  .fc-layout { grid-template-columns: 1fr; }
+  .fc-card { height: 240px; }
+}
+
+/* ---------- Light theme overrides ---------- */
+body:not(.dark-theme) .fc-page {
+  background: #f7f8fc;
+  color: #0f172a;
+}
+
+body:not(.dark-theme) .fc-hero h1 {
+  color: #0f172a;
+}
+
+body:not(.dark-theme) .kicker,
+body:not(.dark-theme) .sub {
+  color: #475569;
+}
+
+body:not(.dark-theme) .deck-btn {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+body:not(.dark-theme) .deck-btn.active {
+  border-color: #7c8dff;
+  box-shadow: 0 10px 22px rgba(124, 141, 255, 0.2);
+}
+
+body:not(.dark-theme) .deck-name {
+  color: #0f172a;
+}
+
+body:not(.dark-theme) .deck-count {
+  color: #475569;
+}
+
+body:not(.dark-theme) .fc-card-wrap {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+body:not(.dark-theme) .fc-face {
+  background: linear-gradient(135deg, #7c8dff, #a78bfa);
+  color: #0b1220;
+  box-shadow: 0 16px 30px rgba(124, 141, 255, 0.25);
+}
+
+body:not(.dark-theme) .fc-face.back {
+  background: #f1f5f9;
+  color: #0f172a;
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
+}
+
+body:not(.dark-theme) .hint {
+  color: #475569;
+}
+
+body:not(.dark-theme) .btn.ghost {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+}
+
+body:not(.dark-theme) .btn.primary {
+  color: white;
+  box-shadow: 0 10px 20px rgba(124, 141, 255, 0.2);
+}

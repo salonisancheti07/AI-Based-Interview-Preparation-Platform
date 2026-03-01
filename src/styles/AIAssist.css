@@ -1,0 +1,138 @@
+.aiassist-page {
+  padding: 140px 16px 48px; /* offset fixed navbar */
+  background: #0b1220;
+  min-height: 100vh;
+  font-family: "Sora", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #e2e8f0;
+}
+.aiassist-hero {
+  max-width: 1100px;
+  margin: 0 auto 18px;
+}
+.aiassist-hero h1 { margin: 6px 0 8px; font-size: clamp(28px, 4vw, 36px); color: #f8fafc; }
+.kicker { text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-weight: 700; font-size: 12px; margin: 0; }
+.sub { color: #cbd5e1; margin: 0; }
+
+.aiassist-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+}
+.ai-card {
+  background: #0f172a;
+  border-radius: 14px;
+  border: 1px solid rgba(226,232,240,0.08);
+  padding: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+  display: grid;
+  gap: 10px;
+  color: #e2e8f0;
+}
+.ai-card.result { grid-column: span 2; }
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #1f2937;
+  color: #cbd5e1;
+  font-weight: 700;
+  font-size: 12px;
+}
+.pill.ghost { background: #111827; color: #a5b4fc; }
+textarea {
+  width: 100%;
+  min-height: 180px;
+  border: 1px solid rgba(226,232,240,0.12);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13px;
+  resize: vertical;
+  background: #0b162b;
+  color: #e2e8f0;
+}
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn.primary { background: linear-gradient(135deg, #7c8dff, #a78bfa); color: #0b1220; }
+.btn.ghost { background: #0f172a; color: #e2e8f0; border: 1px solid rgba(226,232,240,0.12); }
+.feedback-box {
+  min-height: 160px;
+  background: #0b162b;
+  border: 1px dashed #334155;
+  border-radius: 10px;
+  padding: 12px;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+  .ai-card.result { grid-column: span 1; }
+}
+
+/* ---------- Light theme overrides ---------- */
+body:not(.dark-theme) .aiassist-page {
+  background: #f7f8fc;
+  color: #0f172a;
+}
+
+body:not(.dark-theme) .aiassist-hero h1 {
+  color: #0f172a;
+}
+
+body:not(.dark-theme) .kicker,
+body:not(.dark-theme) .sub {
+  color: #475569;
+}
+
+body:not(.dark-theme) .ai-card {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.07);
+}
+
+body:not(.dark-theme) textarea {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+body:not(.dark-theme) .feedback-box {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+
+body:not(.dark-theme) .pill {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+body:not(.dark-theme) .btn.ghost {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+}
+
+body:not(.dark-theme) .btn.primary {
+  color: white;
+  box-shadow: 0 10px 22px rgba(124, 141, 255, 0.2);
+}

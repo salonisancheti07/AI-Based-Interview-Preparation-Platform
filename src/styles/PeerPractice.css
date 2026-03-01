@@ -1,0 +1,645 @@
+/* Peer Practice Styles */
+.peer-practice-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 140px 20px 20px; /* offset fixed navbar */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Dark theme fixes */
+body.dark-theme .peer-practice-container {
+  background: radial-gradient(circle at 20% 20%, #1f2937 0%, #0f172a 45%, #0b1020 100%);
+}
+body.dark-theme .role-selector,
+body.dark-theme .sessions-section,
+body.dark-theme .session-card,
+body.dark-theme .create-session-modal .modal-content {
+  background: #0f172a;
+  color: #e5e7eb;
+  border-color: #1f2937;
+}
+body.dark-theme .session-card {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+body.dark-theme .session-card h4,
+body.dark-theme .session-card p,
+body.dark-theme .sessions-section h3,
+body.dark-theme .role-selector label {
+  color: #e5e7eb;
+}
+body.dark-theme .btn-join,
+body.dark-theme .btn-create-session {
+  background: #2563eb;
+  color: #f8fafc;
+}
+body.dark-theme .role-select,
+body.dark-theme .form-input,
+body.dark-theme .form-textarea,
+body.dark-theme .create-session-modal .modal-content select {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+}
+body.dark-theme .create-session-modal {
+  background: rgba(0,0,0,0.55);
+}
+
+.pp-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.pp-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.btn-back {
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.sessions-view {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.role-selector {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.role-selector label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.role-select {
+  padding: 10px 15px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+}
+
+.btn-create-session {
+  margin-left: auto;
+  padding: 12px 25px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sessions-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.sessions-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.session-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.session-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.session-card.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.session-card.completed {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+}
+
+.session-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  background: rgba(255,0,0,0.2);
+  border-radius: 4px;
+  color: #ff0000;
+}
+
+.session-card h4 {
+  margin-bottom: 10px;
+  color: inherit;
+}
+
+.session-card p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.session-card .date {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.session-card input.form-input {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.btn-join,
+.btn-register,
+.btn-review {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  background: white;
+  color: #667eea;
+  transition: all 0.3s ease;
+}
+
+.session-card.active .btn-join {
+  background: white;
+  color: #667eea;
+}
+
+.btn-join:hover,
+.btn-register:hover,
+.btn-review:hover {
+  transform: scale(1.02);
+}
+
+/* Session Detail */
+.session-detail {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.session-detail h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Interview Mode */
+.interview-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.candidate-view,
+.interviewer-view {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.candidate-view h3,
+.interviewer-view h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.question-display {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.question-number {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.question-display h4 {
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.time-limit {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.answer-textarea,
+.feedback-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.rating-btn {
+  padding: 10px 15px;
+  border: 2px solid #bdc3c7;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.rating-btn:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.btn-submit-answer,
+.btn-send-feedback {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* Session Summary */
+.session-summary {
+  padding: 20px;
+}
+
+.participants-info {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.participants-info h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.participant-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.participant-card:last-child {
+  border-bottom: none;
+}
+
+.role-badge {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.session-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat h4 {
+  margin: 0 0 8px 0;
+}
+
+.stat p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.feedback-exchange {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.feedback-exchange h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.feedback-item {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.from {
+  font-weight: 600;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.rating {
+  color: #f39c12;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.comment {
+  color: #555;
+}
+
+.btn-share {
+  width: 100%;
+  padding: 12px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Create Session Modal */
+.create-session-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-family: inherit;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-create {
+  flex: 1;
+  padding: 12px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .interview-mode {
+    grid-template-columns: 1fr;
+  }
+
+  .role-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-create-session {
+    margin-left: 0;
+  }
+
+  .sessions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Adaptive indicators */
+.difficulty-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  background: #111827;
+  color: #f8fafc;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+.difficulty-chip.easy   { background: #10b981; }
+.difficulty-chip.medium { background: #f59e0b; }
+.difficulty-chip.hard   { background: #ef4444; }
+
+/* Traffic-light skill strength */
+.skill-strength {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #0b1020;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+.skill-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.skill-dot.weak   { background: #ef4444; box-shadow: 0 0 0 6px rgba(239,68,68,0.15); }
+.skill-dot.avg    { background: #f59e0b; box-shadow: 0 0 0 6px rgba(245,158,11,0.15); }
+.skill-dot.strong { background: #22c55e; box-shadow: 0 0 0 6px rgba(34,197,94,0.18); }
+
+/* Matchmaking + live status */
+.matchmaking-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  color: #f8fafc;
+  box-shadow: 0 10px 28px rgba(99,102,241,0.35);
+}
+.pulse-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #22d3ee;
+  animation: pulse 1.4s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* Rating modal */
+.rating-modal .modal-content {
+  max-width: 520px;
+  background: #0f172a;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+}
+.star-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 12px 0 18px;
+}
+.star {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: #111827;
+  color: #f59e0b;
+  border: 1px solid #1f2937;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.star:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.35); }
+
+/* Admin analytics cards */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.analytics-card {
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #111827 0%, #0b1020 100%);
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+}
+.analytics-card h5 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+.analytics-metric {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.trend {
+  font-size: 0.85rem;
+  color: #22c55e;
+}
+.trend.down { color: #ef4444; }
+
+/* Knowledge-graph hint tiles */
+.hint-tile {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+}
+.hint-tile h6 { margin: 0 0 6px 0; font-size: 0.95rem; }
+.hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #1e293b;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+}
+
+/* Session report */
+.report-card {
+  background: #0b1020;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #1f2937;
+}
+.report-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.report-score .value {
+  font-size: 1.6rem;
+  color: #22c55e;
+}
+.report-score .value.low { color: #ef4444; }

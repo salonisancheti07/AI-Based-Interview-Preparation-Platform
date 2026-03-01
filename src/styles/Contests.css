@@ -1,0 +1,88 @@
+.contests-page {
+  padding: 128px 16px 48px; /* add navbar offset */
+  background: #f6f8ff;
+  min-height: 100vh;
+  font-family: "Sora", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.contest-hero {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+}
+.kicker { text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; font-weight: 700; font-size: 12px; margin: 0 0 6px; }
+.contest-hero h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 38px); color: #0f172a; }
+.sub { margin: 0 0 12px; color: #475569; }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { border: none; border-radius: 12px; padding: 12px 16px; font-weight: 700; cursor: pointer; }
+.btn.primary { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; box-shadow: 0 12px 30px rgba(102,126,234,0.25); }
+.btn.ghost { background: #fff; color: #0f172a; border: 1px solid rgba(15,23,42,0.08); }
+.btn.small { padding: 8px 12px; font-size: 14px; }
+.hero-card {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 16px 36px rgba(15,23,42,0.3);
+}
+.countdown { font-size: 26px; font-weight: 800; margin: 6px 0 8px; }
+
+.contest-section { max-width: 1200px; margin: 0 auto 26px; }
+.section-head h2 { margin: 0 0 4px; }
+.section-head p { margin: 0 0 10px; color: #475569; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.contest-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,0.08);
+  padding: 14px;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+}
+.contest-card h3 { margin: 0 0 6px; }
+.contest-card .meta { margin: 0 0 6px; color: #475569; }
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-weight: 700;
+  font-size: 12px;
+}
+.pill.ghost { background: #eef2ff; color: #312e81; }
+
+.table-wrap { overflow-x: auto; background: #fff; border-radius: 12px; border: 1px solid rgba(15,23,42,0.08); }
+.leader-table { width: 100%; border-collapse: collapse; }
+.leader-table th, .leader-table td { padding: 10px; border-bottom: 1px solid #e5e7eb; text-align: left; }
+.leader-table th { color: #475569; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+@media (max-width: 900px) {
+  .contest-hero { grid-template-columns: 1fr; }
+}
+
+/* Dark theme */
+body.dark-theme .contests-page {
+  background: radial-gradient(circle at 20% 20%, #1a0d30 0%, #120924 45%, #0c0619 100%);
+  color: #e5e7eb;
+}
+body.dark-theme .contest-hero h1,
+body.dark-theme .sub,
+body.dark-theme .kicker { color: #e5e7eb; }
+body.dark-theme .contest-hero .sub { opacity: 0.85; }
+body.dark-theme .btn.ghost { background: transparent; color: #e5e7eb; border: 1px solid rgba(255,255,255,0.2); }
+body.dark-theme .contest-card,
+body.dark-theme .table-wrap {
+  background: #0f172a;
+  border-color: #1f2937;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  color: #e5e7eb;
+}
+body.dark-theme .contest-card .meta,
+body.dark-theme .section-head p { color: #cbd5e1; }
+body.dark-theme .pill { background: #7c3aed; color: #f3e8ff; }
+body.dark-theme .pill.ghost { background: #1a102e; color: #e9d5ff; }
+body.dark-theme .hero-card { background: #120a24; }
+body.dark-theme .leader-table th,
+body.dark-theme .leader-table td { color: #e5e7eb; border-color: #1f2937; }
+body.dark-theme .contest-hero { color: #e5e7eb; }

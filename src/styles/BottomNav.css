@@ -1,0 +1,39 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(15, 23, 42, 0.9);
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+}
+.bn-item {
+  border: none;
+  background: none;
+  color: #cbd5e1;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.bn-icon { font-size: 18px; }
+.bn-label { font-size: 12px; }
+.bn-item.active {
+  color: #a5b4fc;
+}
+
+@media (max-width: 900px) {
+  .bottom-nav {
+    display: grid;
+  }
+  body {
+    padding-bottom: 64px;
+  }
+}
