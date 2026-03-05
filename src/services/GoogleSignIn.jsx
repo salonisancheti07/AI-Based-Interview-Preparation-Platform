@@ -69,10 +69,14 @@ const GoogleSignIn = ({ onSuccess = () => {}, isSignup = false }) => {
   };
 
   React.useEffect(() => {
-    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+    // Prefer env; fall back to known public client id so the button renders in hosted envs
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID
+      || '601344022814-iieik7gjo6mejl1qkr1fk7htg0viosem.apps.googleusercontent.com';
     if (!clientId) {
       console.warn('Missing VITE_GOOGLE_CLIENT_ID. Google Sign-In will not render.');
       return;
+    } else if (!import.meta.env.VITE_GOOGLE_CLIENT_ID) {
+      console.warn('Using fallback Google client ID; set VITE_GOOGLE_CLIENT_ID for your project.');
     }
 
     const initializeGoogle = () => {
